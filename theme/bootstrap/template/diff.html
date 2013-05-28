@@ -1,0 +1,22 @@
+<% if @contents[:sidebar_class] %>
+<div class="span3">
+  <div class="well sidebar-nav">
+  <%= @contents[:sidebar] %>
+  </div> <!-- .well -->
+</div> <!-- span3 -->
+<% end %>
+
+<p>command is <%= @command %></p>
+
+<div class="span8">
+  <h1 class="header"><%= @contents[:title] %></h1>
+
+  <p>
+        <ul>
+          <li><%=@conf.msg_diff_add%></li>
+          <li><%=@conf.msg_diff_del%></li>
+        </ul>
+        <hr>
+        <div class="diff"><%= @contents[:differ] %></div>
+  </p>
+</div>

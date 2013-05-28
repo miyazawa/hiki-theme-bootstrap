@@ -1,0 +1,29 @@
+<div class="span3 bs-docs-sidebar">
+  <ul class="nav nav-list bs-docs-sidenav affix-top">
+    <% @plugin.each_conf_key do |key|%>
+    <li><a href="<%=@contents[:cgi_name]%>?c=admin;conf=<%=key%>"><%=@plugin.conf_label( key )%></a></li>
+    <% end %>
+  </ul>
+</div> <!-- span3 -->
+
+<div class="span8">
+  <div class="page-header">
+    <h1><%=@conf.msg_config%></h1>
+  </div>
+
+  <form method="post" action="<%= @contents[:cgi_name] %>" class="form-horizontal">
+    <fieldset>
+      <div class="well">
+        <legend><%=@plugin.conf_label( @contents[:key] )%></legend>
+        <input type="hidden" value="admin" name="c">
+        <input type="hidden" name="conf" value="<%=@contents[:key]%>">
+        <input type="hidden" name="session_id" value="<%=@contents[:session_id]%>">
+        <div class="body">
+          <%=@plugin.conf_proc( @contents[:key] )%>
+          <div><input type="submit" name="saveconf" value="OK"></div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+

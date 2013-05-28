@@ -1,0 +1,16 @@
+<% if @contents[:sidebar_class] %>
+<div class="span3">
+  <div class="well sidebar-nav">
+  <%= @contents[:sidebar] %>
+  </div> <!-- .well -->
+</div> <!-- span3 -->
+<% end %>
+
+<div class="span8">
+  <h1 class="header"><%= @contents[:title] %></h1>
+
+  <p>
+        <p><strong><%= @contents[:msg] %></strong></p>
+        <p><%= @contents[:link] %></p>
+  </p>
+</div>
