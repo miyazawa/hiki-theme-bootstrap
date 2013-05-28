@@ -1,4 +1,4 @@
 hiki-theme-bootstrap
 ====================
 
-hiki's theme
+yet another hiki's theme that using twitter-bootstrap.
